@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+    <html>
+    <head>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/Henry14all/xgplayer-online@cdn/index.css" type="text/css" />     
+        <title>Xgplayer Online</title>
+        <meta charset="utf-8">
+    <!--UC强制全屏-->
+    <meta name="browsermode" content="application">
+    <!--UC应用模式-->
+    <meta name="x5-fullscreen" content="true">
+    <!--QQ强制全屏-->
+    <meta name="x5-page-mode" content="app">
+    <!--QQ应用模式-->
+    </head>
+    
+    <body>
+        <div align="center">
+            <h1><font class="sansserif" color="white">Xgplayer Online - 基于Xgplayer的在线视频播放器</font></h1>
+        </div>
+    
+        <div align="center">
+            <p><font class="sansserif" color="white">请将你的视频直链粘贴于下方输入框，然后点击按钮</font></p>
+        </div>
+
+        <div align="center">
+            <p><font class="sansserif" color="white">目前仅支持MP4格式的视频，你也可以试试其他格式的视频导入播放试试~</font></p>
+        </div>
+    
+        <div align="center">
+            <input type="text" id="URL" name="URL" value="">
+        </div>
+    
+        <div align="center">
+            <button class="button button5" value="" onclick="load()">将链接嵌入到播放器</button>
+        </div>
+        
+        <div align="center">
+        <div id="mse"></div>
+        <script src="//cdn.jsdelivr.net/npm/xgplayer@2.3.5/browser/index.js" charset="utf-8"></script>
+          <script>
+          let player = new Player({
+            id: "mse",
+            url: "//cdn.jsdelivr.net/gh/Henry14all/xgplayer-online@cdn/1.mp4",
+            playsinline: true,
+            whitelist: [
+                    ""
+            ],
+            playbackRate: [
+                    0.1,
+                    0.5,
+                    1,
+                    1.5,
+                    2,
+                    5,
+                    8,
+                    10,
+                    20
+            ],
+            volume: 0.8,
+            rotate: {
+                    clockwise: false,
+                    innerRotate: false
+            },
+            //screenShot: true,   //去掉注释将显示截图按钮
+            keyShortcut: "on",
+            download: true,
+            height: 337,
+		    width: 600
+          });
+          
+            </script>
+            
+            <script type="text/javascript">
+                function load() {
+                    var input = document.getElementById("URL").value;
+                    player.start(input);
+                    player.src = input;
+                    }
+                 
+                 </script>
+            </div>
+            <div align="center"><font class="sansserif" color="white">© 2019-2020 Powered by <a href="//henry14all.github.io">14TEAM</a> . All rights reserved.</font></div>
+
+    
+    <!--
+        作者：HenryJiu
+        官方主页：henry14all.github.io
+        本项目开源并托管于GitHub！
+        GitHub地址：https://github.com/Henry14all/xgplayer-online/
+        鸣谢：Runoob的CSS，JsdelivrCDN，Xgplayer
+        © 2019-2020 Powered by 14TEAM . All rights reserved.
+        版权信息，请勿删除！
+    -->
+    </body>
+    </html>
